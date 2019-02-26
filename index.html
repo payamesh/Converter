@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+
+
+    <select onchange="onchangeParamOne()" id="param1">
+        <option value="sek">Svensk Krona</option>
+        <option value="usd" >US Dollar</option>
+        <option value="eur">Euro</option>
+        <option value="pound">Engelsk Pound</option>
+    </select>
+    <select  onchange="onchangeParamTwo()" id="param2">
+        <option value="sek">Svensk Krona</option>
+        <option value="usd" selected="selected">US Dollar</option>
+        <option value="eur">Euro</option>
+        <option value="pound">Engelsk Pound</option>
+
+    </select>
+    <input onchange="onChangeInput()" type="number" name="value1" id="val1">
+
+    <button onclick="exchangeNotice()">Convert</button>
+    <h1 id="result"></h1>
+
+
+
+    <script src="./script.js"></script>
+    
+</body>
+</html>
