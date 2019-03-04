@@ -1,8 +1,9 @@
 //-------------   VARIABLES   ------------//
 
 let val1 = document.getElementById('val1');
+let val2 = document.getElementById('val2');
 let valVal = val1.value;
-let res = document.getElementById('result');
+let res = document.getElementById('result_currency');
 let paramOne = document.getElementById('param1');
 let paramOneVal = paramOne.value;
 let paramTwo = document.getElementById('param2');
@@ -111,67 +112,78 @@ function exchangeNotice(){
     }
     else if(paramOneVal == 'sek' && paramTwoVal == 'usd'){
        let exchanged = Math.floor(sekToUsd(valVal));
-        res.innerHTML = val1.value +' SEK blir '+ exchanged + ' USD.';
+       val2.value = exchanged;
+
         console.log('SEK to USD');
     }
 
     else if(paramOneVal == 'sek' && paramTwoVal == 'eur'){
          let exchanged = Math.floor(sekToEur(valVal));
-        res.innerHTML = val1.value +' SEK blir '+ exchanged + ' Eur.';
+       val2.value = exchanged;
+        
 
         console.log('SEK to eur');
     }
     else if(paramOneVal == 'sek' && paramTwoVal == 'pound'){
          let exchanged = Math.floor(sekToPound(valVal));
-        res.innerHTML = val1.value +' SEK blir '+ exchanged + ' Pound.';
+       val2.value = exchanged;
+        
 
         console.log('SEK to pound');
     }
     else if(paramOneVal == 'usd' && paramTwoVal == 'sek'){
          let exchanged = Math.floor(usdToSek(valVal));
-        res.innerHTML = val1.value +' USD blir '+ exchanged + ' SEK.';
+       val2.value = exchanged;
+        
 
         console.log('USD to SEK');
     }
     else if(paramOneVal == 'usd' && paramTwoVal == 'eur'){
          let exchanged = Math.floor(usdToEur(valVal));
-        res.innerHTML = val1.value +' USD blir '+ exchanged + ' Euro.';
+       val2.value = exchanged;
+        
 
         console.log('USD to eur');
     }
     else if(paramOneVal == 'usd' && paramTwoVal == 'pound'){
          let exchanged = Math.floor(usdToPound(valVal));
-        res.innerHTML = val1.value +' USD blir '+ exchanged + ' Pound.';
+       val2.value = exchanged;
+        
 
         console.log('USD to pound');
     }
     else if(paramOneVal == 'eur' && paramTwoVal == 'sek'){
          let exchanged = Math.floor(eurToSek(valVal));
-        res.innerHTML = val1.value +' Euro blir '+ exchanged + ' SEK.';
+       val2.value = exchanged;
+        
 
         console.log('eur to SEK');
     }
     else if(paramOneVal == 'eur' && paramTwoVal == 'usd'){
          let exchanged = Math.floor(eurToUsd(valVal));
-        res.innerHTML = val1.value +' Euro blir '+ exchanged + ' USD.';
+       val2.value = exchanged;
+        
 
         console.log('eur to USD');
     }
     else if(paramOneVal == 'pound' && paramTwoVal == 'sek'){
          let exchanged = Math.floor(poundToSek(valVal));
-        res.innerHTML = val1.value +' Pound blir '+ exchanged + ' SEK.';
+       val2.value = exchanged;
+        
 
         console.log('pound to SEK');
     }
     else if(paramOneVal == 'pound' && paramTwoVal == 'usd'){
          let exchanged = Math.floor(poundToUsd(valVal));
-        res.innerHTML = val1.value +' Pound blir '+ exchanged + ' USD.';
+       val2.value = exchanged;
+        
 
         console.log('pound to usd');
     }
     else if(paramOneVal == 'pound' && paramTwoVal == 'eur'){
          let exchanged = Math.floor(poundToEur(valVal));
-        res.innerHTML = val1.value +' Pound blir '+ exchanged + ' Euro.';
+       val2.value = exchanged;
+        
 
         console.log('pound to eur');
     }

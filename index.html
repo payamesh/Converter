@@ -5,35 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    
 </head>
 <body>
     
-
-
-
-
-
-    <select onchange="onchangeParamOne()" id="param1">
-        <option value="sek">Svensk Krona</option>
-        <option value="usd" >US Dollar</option>
-        <option value="eur">Euro</option>
-        <option value="pound">Engelsk Pound</option>
-    </select>
-    <select  onchange="onchangeParamTwo()" id="param2">
-        <option value="sek">Svensk Krona</option>
-        <option value="usd" selected="selected">US Dollar</option>
-        <option value="eur">Euro</option>
-        <option value="pound">Engelsk Pound</option>
-
-    </select>
-    <input onchange="onChangeInput()" type="number" name="value1" id="val1">
-
-    <button onclick="exchangeNotice()">Convert</button>
-    <h1 id="result"></h1>
-
-
-
-    <script src="./script.js"></script>
     
+    <div class="wrapper">
+            <div class="nav">
+                <li>Valutor</li>
+                <li>Timezone</li>
+                <h2>Converter</h2>
+            </div>
+    
+     <!--        <div class="currency_img">
+                <img  src="./img/many_currencies.jpg" alt="">
+
+            </div> -->
+    
+        <div class="currency_box">
+
+            <div class="currency_select-to">
+                
+                <input onchange="onChangeInput()" size="15" type="number" name="value1" id="val1" value="1">
+                <select  onchange="onchangeParamOne()" id="param1">
+                        <option value="sek">Svensk Krona</option>
+                        <option value="usd" >US Dollar</option>
+                        <option value="eur">Euro</option>
+                        <option value="pound">Engelsk Pound</option>
+                    </select>
+                </div>
+                <div class="currency_select-from">
+                <input onchange="onChangeInput()" size="15" type="number" name="to" id="val2" disabled>
+
+                    <select onchange="onchangeParamTwo()" id="param2">
+                            <option value="sek">Svensk Krona</option>
+                            <option value="usd" selected="selected">US Dollar</option>
+                            <option value="eur">Euro</option>
+                            <option value="pound">Engelsk Pound</option>
+                            
+                        </select>
+
+                </div>
+        
+            
+            
+            <button class="button_convert" onclick="exchangeNotice()">Convert</button>
+            <h1 id="result_currency"></h1>
+        </div>
+        <div class="timezone_box">
+            <div class="timezone_select">
+                
+                <select onchange="onchangeCountryOne()"id="country1">
+                        <option value="-8">CALIFORNIA</option>
+                        <option value="-7">KANADA</option>
+                        <option value="-6">GUATEMALA</option>
+                        <option value="-3">ARGENTINA</option>
+                        <option value="0">PORTUGAL</option>
+                        <option value="1">SVERIGE</option>
+                        <option value="2">EGYPTEN</option>
+                        <option value="3.5">IRAN</option>                    
+                    <option value="4">DUBAI</option>
+                    <option value="6">BANGLADESH</option>
+                    <option value="8">SINGAPORE</option>
+                    <option value="9">FILIPPINERNA</option>
+                </select>
+                <select onchange="onchangeCountryTwo()" id="country2">
+                        <option value="-8">CALIFORNIA</option>
+                        <option value="-7">KANADA</option>
+                        <option value="-6">GUATEMALA</option>
+                        <option value="-3">ARGENTINA</option>
+                        <option value="0">PORTUGAL</option>
+                        <option value="1">SVERIGE</option>
+                        <option value="2">EGYPTEN</option>
+                        <option value="3.5">IRAN</option>
+                        <option value="4">DUBAI</option>
+                        <option value="6">BANGLADESH</option>
+                        <option value="8">SINGAPORE</option>
+                        <option value="9">FILIPPINERNA</option>
+                </select>
+            </div>
+
+            <button class="button_convertTime" onclick="submitConvert()">Convert Time</button>
+            <h1 id="result_time"></h1>
+        </div>
+        <div class="timezone_img">
+            <div id="countryone_line" class="countryone_line"></div>
+            <div id="countrytwo_line" class="countrytwo_line"></div>
+            <img src="./img/map_timezone.png" alt="">
+
+
+    
+            </div>
+    
+    
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+<script src="test.js"></script>
+<!--     <script src="./script.js"></script>
+ -->    
 </body>
 </html>
