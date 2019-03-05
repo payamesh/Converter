@@ -149,10 +149,16 @@ function onchangeCountryTwo(){
     }
 }
 let d = new Date();
-console.log(d);
+localTime = d.getTime();
 
-let utc_offset = d.getTimezoneOffset() ;
-console.log(utc_offset);
+let localOffset = d.getTimezoneOffset() *60000 ;
+console.log(localOffset);
+let utc = localTime + localOffset;
+let offsetCountryOne = countryOneVal;
+let offsetCountryTwo = countryTwoVal;
+console.log(offsetCountryOne)
+;
+
 
 
 
@@ -165,59 +171,26 @@ console.log("Phuket: " + d); */
 
 
 function submitConvert(){
-   // HÄMTA TID FRÅN COUNTRY ONE
-    let temp = d;
-    if(countryOneVal <0 ){
-        calcTime = countryOneVal * 60 -60;
-
-    }else{
-        calcTime = countryOneVal * 60;
-
-    }
-
-    temp.setMinutes(temp.getMinutes()+ (calcTime));
-    console.log(temp)
-    let countryoneTime = [temp.getHours(), temp.getMinutes()];
-    console.log(countryoneTime);
-    temp.setMinutes(temp.getMinutes() - (calcTime));
-
-    // HÄMTA TID FRÅN COUNTRY TWO
-    let temp2 = d;
-    if(countryTwoVal <0 ){
-        calcTime = countryTwoVal * 60 -60;
-
-    }else{
-        calcTime = countryTwoVal * 60 -60;
-
-    }
-
-    temp2.setMinutes(temp2.getMinutes()+ (calcTime));
-    console.log(temp2)
-
-    let countrytwoTime = [temp2.getHours(), temp2.getMinutes()];
-    console.log(countrytwoTime);
-let resultTime;
-
-    //räkna ut skillnaden i timmar
-    if(countryoneTime[0] > countrytwoTime[0]){
-       resultTime= countryoneTime[0] - countrytwoTime[0];
-
-    }else{
-        /* let tempcountry = countrytwoTime[0];
-        countrytwoTime[0] = countryoneTime[0];
-        countryoneTime[0] = tempcountry; */
-        resultTime =  countrytwoTime[0] - countryoneTime[0];
-    }
-    console.log(resultTime)
-    result_h1.innerHTML= "Klockan är : "+ countryoneTime + " i "+ countryOne.options[countryOne.selectedIndex].text + "<br>" +"Klockan är : "+ countrytwoTime + " i " + countryTwo.options[countryTwo.selectedIndex].text + "<br>" + "Tidsskillnaden är: "+resultTime+" timmar.";
-
+    let resultCountryOne = utc +(3600000*countryOneVal);
+let resultCountryTwo =  utc + (3600000*countryTwoVal)
+let countryOneND = new Date(resultCountryOne);
+let countryTwoND = new Date(resultCountryTwo);
+ 
+let diff = (countryOneND - countryTwoND)/3600000;
+   if(diff <= 0){
+       diff *=-1;
+   }
+    result_h1.innerHTML = "Idag är det den:  " + countryOneND.toLocaleString() + " i "+ countryOne.options[countryOne.selectedIndex].text + "<br>" + "Idag är det den:  " + countryTwoND.toLocaleString() + " i "+ countryTwo.options[countryTwo.selectedIndex].text + "<br>" + "Tidsskillnaden är: "+ diff + " timmar."; 
+    
+    
+    console.log(diff); 
 
 
 
 
     //RESET
-    temp.setMinutes(temp.getMinutes() - (calcTime));
+    /* temp.setMinutes(temp.getMinutes() - (calcTime));
 
-    temp2.setMinutes(temp2.getMinutes() - (calcTime));
+    temp2.setMinutes(temp2.getMinutes() - (calcTime)); */
 
 }
