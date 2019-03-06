@@ -16,12 +16,13 @@ body{
 }
 .container{
     width: 600px;
-    margin: 80px auto 50px auto;;
+    margin: 10px auto 50px auto;;
     position: relative;
     overflow-x: hidden;
     user-select: none;
 }
 .header{
+    border:3px solid white;
     background-color: #2d2d37;
     text-align: center;
     padding: 1.75rem;
@@ -45,8 +46,8 @@ ul.currencies{
 ul.currencies li{
     background-color: #2d2d37;
     border-radius:5px;
-    list-style: none;
     padding: 1rem 1rem 0.75rem 1rem;
+    list-style: none;
     margin-bottom: 1rem;
     position: relative;
 }
