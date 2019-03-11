@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">  
+      <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="/currency.css">
     
 </head>
@@ -13,7 +14,7 @@
     
     
     <div class="wrapper">
-          
+          <div class="nav"><li><a href="timezone.html">Gå till TidsZons Konvertering <i class="fas fa-long-arrow-alt-right"></i></a></li></div>
     
      <!--        <div class="currency_img">
                 <img  src="./img/many_currencies.jpg" alt="">
@@ -33,55 +34,9 @@
             
             
          
-            <h2>Jämför Tidszoner</h2>
+            
         
-        <div class="timezone_box">
-            <div class="timezone_select">
-                <select onchange="onchangeCountryOne()"id="country1" >
-                        <option value="" selected>Välj Ett land</option>
-                        <option value="-8">CALIFORNIA</option>
-                        <option value="-7">KANADA</option>
-                        <option value="-6">GUATEMALA</option>
-                        <option value="-3">ARGENTINA</option>
-                        <option value="0">PORTUGAL</option>
-                        <option value="1">SVERIGE</option>
-                        <option value="2">EGYPTEN</option>
-                        <option value="3.5">IRAN</option>                    
-                    <option value="4">DUBAI</option>
-                    <option value="6">BANGLADESH</option>
-                    <option value="8">SINGAPORE</option>
-                    <option value="9">FILIPPINERNA</option>
-                </select>
-                <select onchange="onchangeCountryTwo()" id="country2">
-                    <option value="" selected>Välj Ett land</option>
-                    
-                        <option value="-8">CALIFORNIA</option>
-                        <option value="-7">KANADA</option>
-                        <option value="-6">GUATEMALA</option>
-                        <option value="-3">ARGENTINA</option>
-                        <option value="0">PORTUGAL</option>
-                        <option value="1">SVERIGE</option>
-                        <option value="2">EGYPTEN</option>
-                        <option value="3.5">IRAN</option>
-                        <option value="4">DUBAI</option>
-                        <option value="6">BANGLADESH</option>
-                        <option value="8">SINGAPORE</option>
-                        <option value="9">FILIPPINERNA</option>
-                </select>
-            </div>
-
-            <button class="button_convertTime" onclick="submitConvert()">Hämta Resultat</button>
-            <h1 id="result_time"></h1>
-        </div>
-        <div class="timezone_img">
-            <div id="countryone_line" class="countryone_line"></div>
-            <div id="countrytwo_line" class="countrytwo_line"></div>
-            <img src="./img/map_timezone.png" alt="">
-
-
-    
-            </div>
-        </div>
+        
     
     </div>
     <script src="/currency.js"></script>
